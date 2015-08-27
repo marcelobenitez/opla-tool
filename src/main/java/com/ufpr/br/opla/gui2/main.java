@@ -339,6 +339,12 @@ public class main extends javax.swing.JFrame {
         checkElegance = new javax.swing.JCheckBox();
         checkPLAExt = new javax.swing.JCheckBox();
         checkFeatureDriven = new javax.swing.JCheckBox();
+        checkAclass = new javax.swing.JCheckBox();
+        checkAcomp = new javax.swing.JCheckBox();
+        checkTam = new javax.swing.JCheckBox();
+        checkCoe = new javax.swing.JCheckBox();
+        checkDc = new javax.swing.JCheckBox();
+        checkEc = new javax.swing.JCheckBox();
         panelOperatorsMutation = new javax.swing.JPanel();
         checkFeatureMutation = new javax.swing.JCheckBox();
         checkMoveMethod = new javax.swing.JCheckBox();
@@ -876,6 +882,52 @@ public class main extends javax.swing.JFrame {
                 checkFeatureDrivenActionPerformed(evt);
             }
         });
+        
+        
+        checkAcomp.setText("Components Coupling");
+        checkAcomp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkAcompActionPerformed(evt);
+            }
+        });
+        
+        checkAclass.setText("Class Coupling");
+        checkAclass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkAclassActionPerformed(evt);
+            }
+        });
+        
+        checkTam.setText("Size");
+        checkTam.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkTamActionPerformed(evt);
+            }
+        });
+        
+        checkCoe.setText("Cohesion");
+        checkCoe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkCoeActionPerformed(evt);
+            }
+        });
+        
+        
+        checkDc.setText("Features Diffusion");
+        checkDc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkDcActionPerformed(evt);
+            }
+        });
+        
+        checkEc.setText("Features Interlacing");
+        checkEc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkEcActionPerformed(evt);
+            }
+        });
+        
+
 
         javax.swing.GroupLayout panelMetricsLayout = new javax.swing.GroupLayout(panelMetrics);
         panelMetrics.setLayout(panelMetricsLayout);
@@ -885,11 +937,23 @@ public class main extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(panelMetricsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(checkConventional)
-                    .addComponent(checkElegance))
+                    .addComponent(checkAcomp)
+                    .addComponent(checkAclass)
+                    .addComponent(checkTam)
+                    .addComponent(checkFeatureDriven)
+                    )
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelMetricsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(checkFeatureDriven)
-                    .addComponent(checkPLAExt))
+                		
+               		.addComponent(checkCoe)
+               		.addComponent(checkEc)
+               		.addComponent(checkDc)
+               		.addComponent(checkPLAExt)
+                    .addComponent(checkElegance)
+                    
+                    )
+                   
+                
                 .addContainerGap(123, Short.MAX_VALUE))
         );
         panelMetricsLayout.setVerticalGroup(
@@ -897,13 +961,28 @@ public class main extends javax.swing.JFrame {
             .addGroup(panelMetricsLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addGroup(panelMetricsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(checkConventional)
-                    .addComponent(checkPLAExt))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelMetricsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(checkElegance)
-                    .addComponent(checkFeatureDriven))
-                .addContainerGap(17, Short.MAX_VALUE))
+                		
+            		.addGroup(panelMetricsLayout.createSequentialGroup()
+            	            .addGroup(panelMetricsLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+            	            		.addComponent(checkConventional)
+            	            		.addComponent(checkCoe))
+            	            .addGroup(panelMetricsLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+            	            		.addComponent(checkAcomp)
+            	            		.addComponent(checkEc))
+            	            .addGroup(panelMetricsLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+            	            		.addComponent(checkAclass)
+            	            		.addComponent(checkDc))
+            	            .addGroup(panelMetricsLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+            	            		.addComponent(checkTam)
+            	            		.addComponent(checkPLAExt))
+            	           .addGroup(panelMetricsLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+            	            		.addComponent(checkFeatureDriven)
+            	            		.addComponent(checkElegance))
+                    
+                    )))
+                
+                
+                    
         );
 
         panelOperatorsMutation.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Select Mutation Operators wich want to use", 0, 0, new java.awt.Font("Verdana", 1, 14), java.awt.Color.magenta)); // NOI18N
@@ -1154,7 +1233,7 @@ public class main extends javax.swing.JFrame {
             }
         });
 
-        btnOutput.setText("Select a Directory...");
+        btnOutput.setText("Select a Directory");
         btnOutput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnOutputActionPerformed(evt);
@@ -1811,7 +1890,7 @@ public class main extends javax.swing.JFrame {
         textLogsArea.setRows(5);
         jScrollPane6.setViewportView(textLogsArea);
 
-        jLabel12.setText("Status: -");
+        jLabel12.setText("Status:");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -2082,6 +2161,36 @@ public class main extends javax.swing.JFrame {
       final String metric = Metrics.FEATURE_DRIVEN.getName();
       addToMetrics(checkFeatureDriven, metric);
     }//GEN-LAST:event_checkFeatureDrivenActionPerformed
+    
+    private void checkAclassActionPerformed (java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkAclassActionPerformed
+        final String metric = Metrics.ACLASS.getName();
+        addToMetrics(checkAclass, metric);
+    }//GEN-LAST:event_checkAclassActionPerformed
+    
+    private void checkAcompActionPerformed (java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkAcompActionPerformed
+        final String metric = Metrics.ACOMP.getName();
+        addToMetrics(checkAcomp, metric);
+    }//GEN-LAST:event_checkAcompActionPerformed
+    
+    private void checkTamActionPerformed (java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkTamActionPerformed
+        final String metric = Metrics.TAM.getName();
+        addToMetrics(checkTam, metric);
+    }//GEN-LAST:event_checkTamActionPerformed
+    
+    private void checkCoeActionPerformed (java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkCoeActionPerformed
+        final String metric = Metrics.COE.getName();
+        addToMetrics(checkCoe, metric);
+    }//GEN-LAST:event_checkCoeActionPerformed
+    
+    private void checkEcActionPerformed (java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkEcActionPerformed
+        final String metric = Metrics.EC.getName();
+        addToMetrics(checkEc, metric);
+    }//GEN-LAST:event_checkEcActionPerformed
+    
+    private void checkDcActionPerformed (java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkDcActionPerformed
+        final String metric = Metrics.ACLASS.getName();
+        addToMetrics(checkDc, metric);
+    }//GEN-LAST:event_checkDcActionPerformed
 
     private void numberOfRunsFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_numberOfRunsFocusLost
       if (Utils.isDigit(fieldNumberOfRuns.getText())) {
@@ -2741,6 +2850,14 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JCheckBox checkConventional;
     private javax.swing.JCheckBox checkCrossover;
     private javax.swing.JCheckBox checkElegance;
+    
+    private javax.swing.JCheckBox checkAcomp;
+    private javax.swing.JCheckBox checkAclass;
+    private javax.swing.JCheckBox checkTam;
+    private javax.swing.JCheckBox checkCoe;
+    private javax.swing.JCheckBox checkDc;
+    private javax.swing.JCheckBox checkEc;
+    
     private javax.swing.JCheckBox checkFeatureDriven;
     private javax.swing.JCheckBox checkFeatureMutation;
     private javax.swing.JCheckBox checkManagerClass;
@@ -2878,6 +2995,12 @@ public class main extends javax.swing.JFrame {
     checkPLAExt.setSelected(true);
     checkConventional.setSelected(true);
     checkFeatureDriven.setSelected(true);
+    checkAcomp.setSelected(true);
+    checkAclass.setSelected(true);
+    checkTam.setSelected(true);
+    checkCoe.setSelected(true);
+    checkDc.setSelected(true);
+    checkEc.setSelected(true);
   }
 
   /**
