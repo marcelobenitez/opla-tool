@@ -941,7 +941,6 @@ public class main extends javax.swing.JFrame {
                     .addComponent(checkAclass)
                     .addComponent(checkTam)
                		.addComponent(checkPLAExt)
-
                     )
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelMetricsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -979,6 +978,7 @@ public class main extends javax.swing.JFrame {
             	           .addGroup(panelMetricsLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
             	            		.addComponent(checkPLAExt)
             	            		.addComponent(checkElegance))
+            	          
                     
                     )))
                 
